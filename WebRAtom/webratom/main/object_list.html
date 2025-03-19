@@ -1,0 +1,42 @@
+<!-- templates/object_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object List</title>
+    <style>
+        /* Простой стиль для меню */
+        .menu {
+            width: 200px;
+            float: left;
+            margin-right: 20px;
+            border-right: 1px solid #ccc;
+            padding-right: 10px;
+        }
+        .content {
+            margin-left: 220px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <h2>Objects</h2>
+        <ul>
+            {% for obj in objects %}
+                <li>
+                    <a href="{% url 'object_detail' obj.id_object %}">{{ obj.full_object_name }}</a>
+                </li>
+            {% empty %}
+                <li>No objects available.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Object List</h1>
+        <p>Select an object from the menu to see its details.</p>
+        <!-- Кнопка для перехода к приложению Dash -->
+        <button onclick="window.location.href='http://127.0.0.1:8050/';">Перейти к Dash</button>
+    </div>
+</body>
+</html>

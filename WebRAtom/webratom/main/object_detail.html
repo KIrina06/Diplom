@@ -1,0 +1,23 @@
+<!-- templates/object_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ object.full_object_name }}</title>
+</head>
+<body>
+    <h1>{{ object.full_object_name }}</h1>
+    <p><strong>Short Name:</strong> {{ object.short_object_name }}</p>
+    <p><strong>Address:</strong> {{ object.address_object }}</p>
+    <p><strong>Area (km²):</strong> {{ object.area_object_km2 }}</p>
+    <p><strong>Visibility Level:</strong> {{ object.visibility_level }}</p>
+    <p><strong>Security Classification:</strong> {{ object.security_classification }}</p>
+    <p><strong>Full Description:</strong> {{ object.full_object_name }}</p>
+    <div>
+        <!-- Кнопка для перехода к приложению Streamlit -->
+        <button onclick="window.location.href='http://localhost:8501';">Перейти к Streamlit</button>
+    </div>
+    <a href="{% url 'object_list' %}">Back to Object List</a>
+</body>
+</html>
